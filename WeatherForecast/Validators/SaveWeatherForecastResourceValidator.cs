@@ -15,8 +15,6 @@ namespace WeatherForecast.Validators
                 .NotEmpty();
             RuleFor(a => a.Summary)
                 .NotEmpty();
-            RuleFor(a => a.TemperatureC)
-                .NotEmpty();
         }
     }
 }
