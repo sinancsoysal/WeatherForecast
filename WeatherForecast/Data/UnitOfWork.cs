@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using WeatherForecast.Core;
 using WeatherForecast.Core.Repositories;
 using WeatherForecast.Data.Repositories;
@@ -11,7 +8,7 @@ namespace WeatherForecast.Data
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        private WeatherForecastRepository _weatherForecastRepository;
+        private readonly WeatherForecastRepository _weatherForecastRepository;
 
         public UnitOfWork(ApplicationDbContext applicationDbContext)
         {
