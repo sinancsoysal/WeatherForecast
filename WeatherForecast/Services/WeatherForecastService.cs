@@ -16,6 +16,7 @@ namespace WeatherForecast.Services
         }
         public async Task<Weather> CreateWeatherForecast(Weather newWeatherForecast)
         {
+            newWeatherForecast.TemperatureF = 32 + (int)(newWeatherForecast.TemperatureC / 0.5556);
             await _unitOfWork.WeatherForecasts.AddAsync(newWeatherForecast);
             await _unitOfWork.CommitAsync();
             return newWeatherForecast;
