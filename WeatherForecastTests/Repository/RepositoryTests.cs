@@ -23,37 +23,39 @@ namespace WeatherForecastTests.Repository
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                   .UseInMemoryDatabase(databaseName: "weatherforecasts")
                   .Options;
-            _context = new ApplicationDbContext(options);
-            _forecasts = new List<Weather>();
 
-            _forecasts.Add(new Weather
+            _context = new ApplicationDbContext(options);
+            _forecasts = new List<Weather>
             {
-                Id = 1,
-                Date = DateTime.MinValue,
-                TemperatureC = 23,
-                Summary = "Cloudy"
-            });
-            _forecasts.Add(new Weather
-            {
-                Id = 2,
-                Date = DateTime.MinValue,
-                TemperatureC = 33,
-                Summary = "Hot"
-            });
-            _forecasts.Add(new Weather
-            {
-                Id = 3,
-                Date = DateTime.MinValue,
-                TemperatureC = 63,
-                Summary = "Fryer"
-            });
-            _forecasts.Add(new Weather
-            {
-                Id = 4,
-                Date = DateTime.Today,
-                TemperatureC = 13,
-                Summary = "Cold"
-            });
+                new Weather
+                {
+                    Id = 1,
+                    Date = DateTime.MinValue,
+                    TemperatureC = 23,
+                    Summary = "Cloudy"
+                },
+                new Weather
+                {
+                    Id = 2,
+                    Date = DateTime.MinValue,
+                    TemperatureC = 33,
+                    Summary = "Hot"
+                },
+                new Weather
+                {
+                    Id = 3,
+                    Date = DateTime.MinValue,
+                    TemperatureC = 63,
+                    Summary = "Fryer"
+                },
+                new Weather
+                {
+                    Id = 4,
+                    Date = DateTime.Today,
+                    TemperatureC = 13,
+                    Summary = "Cold"
+                }
+            };
 
             _context.AddRange(_forecasts);
             _context.SaveChanges();
