@@ -9,10 +9,6 @@ using WeatherForecast.Core.Services;
 using WeatherForecast.Resources;
 using WeatherForecast.Validators;
 
-// i'm trying to figure out how to use mappers to serve information
-// this controller violates some principles & its a little messy.d
-// ill fix it when im done with the mappers
-
 namespace WeatherForecast.Controllers
 {
     [Route("api/[controller]")]
